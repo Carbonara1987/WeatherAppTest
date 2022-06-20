@@ -168,6 +168,7 @@ class ForecastsController extends Controller
             $returnData['success'] = false;
         }
 
-        return view('/forecasts', compact('returnData'));
+        return response()
+        ->json($returnData);
     }
 }
