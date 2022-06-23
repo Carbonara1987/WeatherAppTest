@@ -59,11 +59,11 @@ class MainComponent extends Component {
 
         return(
             <div className="site-content">
-                <form className='authForm' style={{display: auth ? 'none' : 'block' }} onSubmit={this.handleSubmit}>
+                <form className='authForm' style={{display: auth ? 'none' : 'flex' }} onSubmit={this.handleSubmit}>
                     <label>
-                    Nome:
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    Password:
                     </label>
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="Submit" />
                 </form>
                 {auth && (

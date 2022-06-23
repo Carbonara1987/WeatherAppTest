@@ -1433,54 +1433,18 @@ color: white; }
     list-style: none;
   }
 
-.auth  input[type="text"],
-.auth input[type="password"] {
-  height: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.auth input[type="submit"] {
-  margin-top: 10px;
-  cursor: pointer;
-  font-size: 15px;
-  background: #01d28e;
-  border: 1px solid #01d28e;
-  color: #fff;
-  padding: 10px 20px;
-}
-
-.auth input[type="submit"]:hover {
-  background: #6cf0c2;
-}
-
-.auth .button-container {
+.authForm {
   display: flex;
+  align-items: center;
   justify-content: center;
+  min-height: 500px;
 }
 
-.auth .login-form {
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.authForm label {
+  margin-right: 10px;
 }
 
-.auth .list-container {
-  display: flex;
+.authForm input{
+  margin-right: 10px;
 }
 
-.auth .error {
-  color: red;
-  font-size: 12px;
-}
-
-.auth .title {
-  font-size: 25px;
-  margin-bottom: 20px;
-}
-
-.auth .input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 10px;
-}
