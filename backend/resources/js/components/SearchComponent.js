@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import Autosuggest from 'react-autosuggest';
-import ForecastComponent from './ForecastComponent';
+import WeatherComponent from './WeatherComponent';
 
 function getRegexAnywhere(val) {
 	return new RegExp(`${val}`, 'i');
@@ -65,12 +65,9 @@ function renderSuggestion(suggestion, {
 	);
 }
 
+
+
 class SearchComponent extends Component {
-    state = {
-        items: [],
-        value: '',
-        success: false
-    };
 
 	constructor() {
 		super();
@@ -80,7 +77,8 @@ class SearchComponent extends Component {
 			suggestions: [],
 			selections: [],
             forecasts: [],
-			isLoading: false
+			isLoading: false,
+			isLoaded: false
 		};
 
 		this.cache = {
@@ -88,27 +86,28 @@ class SearchComponent extends Component {
 		};
 
 		this.lastRequestId = null;
+
 	}
+	
 
     componentDidMount(){
-        this.setDefaultLocation;
-    }
 
-    setDefaultLocation() {
-        axios.post('http://localhost/forecasts',{city: 'Roma'})
-			.then(res => {
-				console.log(res.data);
-                this.setState({forecasts: res.data});
-			}).catch(err => {
-				console.log(err);
-			})
-    }
+		axios.post('http://localhost/forecasts',{city: 'Roma'})
+		.then(res => {
+			console.log(res.data);
+			this.setState({forecasts: res.data, isLoaded: true});
+		}).catch(err => {
+			console.log(err);
+		})
+	}
 
     findLocation(suggestion) {
+		this.setState({isLoaded: false});
         axios.post('http://localhost/forecasts',{city: suggestion})
 			.then(res => {
 				console.log(res.data);
                 this.setState({forecasts: res.data});
+				this.state.isLoaded = true
 			}).catch(err => {
 				console.log(err);
 			})
@@ -180,7 +179,7 @@ class SearchComponent extends Component {
         this.findLocation(suggestion.name);
     };
 
-	render() {
+	__renderSearchBar(){
 		const {
 			value,
 			suggestions,
@@ -193,24 +192,43 @@ class SearchComponent extends Component {
 		};
 
 		return (
-            <div>
-                <div className="hero" data-bg-image="images/banner.png">
-                    <div className="container">
-                        <section className="find-location">
-                                {isLoading ? <span className="loading-spinner"></span> : null}
-                                <Autosuggest 
-                        suggestions={suggestions}
-                        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                        getSuggestionValue={getSuggestionValue}
-                        renderSuggestion={renderSuggestion}
-                            onSuggestionSelected={this.onSuggestionSelected}
-                        inputProps={inputProps} />
-                        </section>
-                    </div>
-                </div>
-                <ForecastComponent forecasts={this.state.forecasts}></ForecastComponent>
-            </div>
+			<div className="hero" data-bg-image="images/banner.png">
+				<div className="container">
+					<section className="find-location">
+							{isLoading ? <span className="loading-spinner"></span> : null}
+							<Autosuggest 
+					suggestions={suggestions}
+					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+					onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+					getSuggestionValue={getSuggestionValue}
+					renderSuggestion={renderSuggestion}
+						onSuggestionSelected={this.onSuggestionSelected}
+					inputProps={inputProps} />
+					</section>
+				</div>
+			</div>
+		);
+	}
+
+	__renderForecasts(){
+		return(
+			<div>
+				<WeatherComponent forecasts={this.state.forecasts}></WeatherComponent>
+			</div>
+		)
+	}
+
+	render() {
+		const isLoaded = this.state.isLoaded;
+
+		return (
+			<div>
+				{this.__renderSearchBar()}
+				{isLoaded && (
+					this.__renderForecasts()
+				)}
+				<div className="loading" style={{display: this.state.isLoaded ? 'none' : 'block' }}></div>
+			</div>
 		);
 	}
 }

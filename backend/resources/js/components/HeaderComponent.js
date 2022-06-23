@@ -8,8 +8,8 @@ class HeaderComponent extends Component {
 					<a href="index.html" className="branding">
 						<img src="http://localhost/images/logo.png" alt="" className="logo"/>
 						<div className="logo-type">
-							<h1 className="site-title">Company name</h1>
-							<small className="site-description">tagline goes here</small>
+							<h1 className="site-title">Meteo test</h1>
+							<small className="site-description">prova tecnica 06/2022</small>
 						</div>
 					</a>
 				</div>

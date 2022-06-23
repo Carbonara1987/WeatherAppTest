@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import ForecastsComponent from './ForecastsComponent';
 
-class ForecastComponent extends Component {
+class WeatherComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -24,11 +25,12 @@ class ForecastComponent extends Component {
 										<img src={data.weather_icon} alt="" width="90"/>
 									</div>	
 								</div>
-								<span><img src="images/icon-umberella.png" alt=""/><span className="humidity">20%</span></span>
+								<span><img src="images/icon-umberella.png" alt=""/><span className="humidity">{data.today_humidity}%</span></span>
 								<span><img src="images/icon-wind.png" alt=""/><span className="wind-speed">{data.today_wind_speed}km/h</span></span>
 								<span><img src="images/icon-compass.png" alt=""/><span className="wind-direction">{data.wind_direction}</span></span>
 							</div>
 						</div>
+						<ForecastsComponent dailies={data.daily}></ForecastsComponent>
 					</div>
 				</div>
 			</div>
@@ -44,4 +46,4 @@ class ForecastComponent extends Component {
     }
 }
 
-export default ForecastComponent;
+export default WeatherComponent;

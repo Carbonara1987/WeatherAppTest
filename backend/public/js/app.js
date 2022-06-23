@@ -2211,10 +2211,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/ForecastComponent.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ForecastComponent.js ***!
-  \******************************************************/
+/***/ "./resources/js/components/ForecastsComponent.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/ForecastsComponent.js ***!
+  \*******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2226,6 +2226,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -2251,102 +2263,68 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var ForecastComponent = /*#__PURE__*/function (_Component) {
-  _inherits(ForecastComponent, _Component);
+var ForecastsComponent = /*#__PURE__*/function (_Component) {
+  _inherits(ForecastsComponent, _Component);
 
-  var _super = _createSuper(ForecastComponent);
+  var _super = _createSuper(ForecastsComponent);
 
-  function ForecastComponent(props) {
-    _classCallCheck(this, ForecastComponent);
+  function ForecastsComponent(props) {
+    _classCallCheck(this, ForecastsComponent);
 
     return _super.call(this, props);
   }
 
-  _createClass(ForecastComponent, [{
+  _createClass(ForecastsComponent, [{
     key: "__renderForecasts",
-    value: function __renderForecasts(data) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "forecast-table",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "container",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "forecast-container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "today forecast",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "forecast-header",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                  className: "day",
-                  children: data.today_day
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                  className: "date",
-                  children: data.today_date
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                className: "forecast-content",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                  className: "location",
-                  children: data.city
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                  className: "degree",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-                    className: "num",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                      children: data.today_max_temp
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("sup", {
-                      children: "o"
-                    }), "C"]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-                    className: "forecast-icon",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                      src: data.weather_icon,
-                      alt: "",
-                      width: "90"
-                    })
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                    src: "images/icon-umberella.png",
-                    alt: ""
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                    className: "humidity",
-                    children: "20%"
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                    src: "images/icon-wind.png",
-                    alt: ""
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                    className: "wind-speed",
-                    children: [data.today_wind_speed, "km/h"]
-                  })]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                    src: "images/icon-compass.png",
-                    alt: ""
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                    className: "wind-direction",
-                    children: data.wind_direction
-                  })]
-                })]
-              })]
+    value: function __renderForecasts(object) {
+      return Object.entries(object).map(function (_ref, i) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            key = _ref2[0],
+            value = _ref2[1];
+
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "forecast next",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "forecast-header",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "day",
+              children: value.day
             })
-          })
-        })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "forecast-content",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+              className: "forecast-icon",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+                src: value.weather_icon,
+                alt: "",
+                width: "48"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "degree",
+              children: [value.max_temp, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("sup", {
+                children: "o"
+              }), "C"]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("small", {
+              children: [value.low_temp, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("sup", {
+                children: "o"
+              })]
+            })]
+          })]
+        });
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var forecasts = this.props.forecasts;
-      return this.__renderForecasts(forecasts);
+      var daily = this.props.dailies;
+      return this.__renderForecasts(daily);
     }
   }]);
 
-  return ForecastComponent;
+  return ForecastsComponent;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForecastComponent);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ForecastsComponent);
 
 /***/ }),
 
@@ -2419,10 +2397,10 @@ var HeaderComponent = /*#__PURE__*/function (_Component) {
               className: "logo-type",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
                 className: "site-title",
-                children: "Company name"
+                children: "Meteo test"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
                 className: "site-description",
-                children: "tagline goes here"
+                children: "prova tecnica 06/2022"
               })]
             })]
           })
@@ -2529,7 +2507,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-autosuggest */ "./node_modules/react-autosuggest/dist/index.js");
 /* harmony import */ var react_autosuggest__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_autosuggest__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ForecastComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ForecastComponent */ "./resources/js/components/ForecastComponent.js");
+/* harmony import */ var _WeatherComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WeatherComponent */ "./resources/js/components/WeatherComponent.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -2662,12 +2640,6 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
 
     _this = _super.call(this);
 
-    _defineProperty(_assertThisInitialized(_this), "state", {
-      items: [],
-      value: '',
-      success: false
-    });
-
     _defineProperty(_assertThisInitialized(_this), "onChange", function (event, _ref2) {
       var newValue = _ref2.newValue;
 
@@ -2704,7 +2676,8 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
       suggestions: [],
       selections: [],
       forecasts: [],
-      isLoading: false
+      isLoading: false,
+      isLoaded: false
     };
     _this.cache = {
       suggestions: _this.state.suggestions
@@ -2716,11 +2689,6 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
   _createClass(SearchComponent, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.setDefaultLocation;
-    }
-  }, {
-    key: "setDefaultLocation",
-    value: function setDefaultLocation() {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default().post('http://localhost/forecasts', {
@@ -2729,7 +2697,8 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
         console.log(res.data);
 
         _this2.setState({
-          forecasts: res.data
+          forecasts: res.data,
+          isLoaded: true
         });
       })["catch"](function (err) {
         console.log(err);
@@ -2740,6 +2709,9 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
     value: function findLocation(suggestion) {
       var _this3 = this;
 
+      this.setState({
+        isLoaded: false
+      });
       axios__WEBPACK_IMPORTED_MODULE_1___default().post('http://localhost/forecasts', {
         city: suggestion
       }).then(function (res) {
@@ -2748,6 +2720,8 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
         _this3.setState({
           forecasts: res.data
         });
+
+        _this3.state.isLoaded = true;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -2791,8 +2765,8 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
       });
     }
   }, {
-    key: "render",
-    value: function render() {
+    key: "__renderSearchBar",
+    value: function __renderSearchBar() {
       var _this$state = this.state,
           value = _this$state.value,
           suggestions = _this$state.suggestions,
@@ -2802,29 +2776,47 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
         value: value,
         onChange: this.onChange
       };
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "hero",
-          "data-bg-image": "images/banner.png",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
-              className: "find-location",
-              children: [isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "loading-spinner"
-              }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_autosuggest__WEBPACK_IMPORTED_MODULE_2___default()), {
-                suggestions: suggestions,
-                onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
-                onSuggestionsClearRequested: this.onSuggestionsClearRequested,
-                getSuggestionValue: getSuggestionValue,
-                renderSuggestion: renderSuggestion,
-                onSuggestionSelected: this.onSuggestionSelected,
-                inputProps: inputProps
-              })]
-            })
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "hero",
+        "data-bg-image": "images/banner.png",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
+            className: "find-location",
+            children: [isLoading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "loading-spinner"
+            }) : null, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)((react_autosuggest__WEBPACK_IMPORTED_MODULE_2___default()), {
+              suggestions: suggestions,
+              onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
+              onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+              getSuggestionValue: getSuggestionValue,
+              renderSuggestion: renderSuggestion,
+              onSuggestionSelected: this.onSuggestionSelected,
+              inputProps: inputProps
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ForecastComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        })
+      });
+    }
+  }, {
+    key: "__renderForecasts",
+    value: function __renderForecasts() {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_WeatherComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
           forecasts: this.state.forecasts
+        })
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoaded = this.state.isLoaded;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        children: [this.__renderSearchBar(), isLoaded && this.__renderForecasts(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "loading",
+          style: {
+            display: this.state.isLoaded ? 'none' : 'block'
+          }
         })]
       });
     }
@@ -2834,6 +2826,149 @@ var SearchComponent = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchComponent);
+
+/***/ }),
+
+/***/ "./resources/js/components/WeatherComponent.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/WeatherComponent.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ForecastsComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ForecastsComponent */ "./resources/js/components/ForecastsComponent.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+
+
+var WeatherComponent = /*#__PURE__*/function (_Component) {
+  _inherits(WeatherComponent, _Component);
+
+  var _super = _createSuper(WeatherComponent);
+
+  function WeatherComponent(props) {
+    _classCallCheck(this, WeatherComponent);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(WeatherComponent, [{
+    key: "__renderForecasts",
+    value: function __renderForecasts(data) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "forecast-table",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "forecast-container",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "today forecast",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "forecast-header",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "day",
+                  children: data.today_day
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "date",
+                  children: data.today_date
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "forecast-content",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "location",
+                  children: data.city
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: "degree",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "num",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      children: data.today_max_temp
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("sup", {
+                      children: "o"
+                    }), "C"]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "forecast-icon",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                      src: data.weather_icon,
+                      alt: "",
+                      width: "90"
+                    })
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: "images/icon-umberella.png",
+                    alt: ""
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: "humidity",
+                    children: "20%"
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: "images/icon-wind.png",
+                    alt: ""
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                    className: "wind-speed",
+                    children: [data.today_wind_speed, "km/h"]
+                  })]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: "images/icon-compass.png",
+                    alt: ""
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: "wind-direction",
+                    children: data.wind_direction
+                  })]
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ForecastsComponent__WEBPACK_IMPORTED_MODULE_1__["default"], {
+              dailies: data.daily
+            })]
+          })
+        })
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var forecasts = this.props.forecasts;
+      return this.__renderForecasts(forecasts);
+    }
+  }]);
+
+  return WeatherComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (WeatherComponent);
 
 /***/ }),
 
