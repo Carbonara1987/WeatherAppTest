@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::post('forecasts', 'App\Http\Controllers\ForecastsController@getData');
+Route::post('auth', 'App\Http\Controllers\AuthController@login');
 
 Route::get('/token', function () {
     return csrf_token(); 

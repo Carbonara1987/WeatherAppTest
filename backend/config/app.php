@@ -126,6 +126,7 @@ return [
     'cipher' => 'AES-256-CBC',
 
     'weather_api_key' => env('OPEN_WEATHER_API_KEY'),
+    'weather_password' => env('WEATHER_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

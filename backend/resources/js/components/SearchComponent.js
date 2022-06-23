@@ -195,7 +195,6 @@ class SearchComponent extends Component {
 			<div className="hero" data-bg-image="images/banner.png">
 				<div className="container">
 					<section className="find-location">
-							{isLoading ? <span className="loading-spinner"></span> : null}
 							<Autosuggest 
 					suggestions={suggestions}
 					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
