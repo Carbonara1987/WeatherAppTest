@@ -4,8 +4,6 @@ Mini applicazione di previsioni del tempo, basata su api di OpenWeather, a cui h
 
 Run docker, then 
 
- cd backend &&
+ `cd backend &&
  ./vendor/bin/sail up
- ./vendor/bin/sail npm run dev
-
- password 'andrea ferrentino'
+ ./vendor/bin/sail npm run dev`
